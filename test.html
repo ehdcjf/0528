@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    let answer = 0;
+    let skill = "CBD"
+    let skill_trees = ["BACDE", "CBADF", "AECB", "BDA"];
+    let arr = [];
+    for (let i = 0; i < skill_trees.length; i++) {
+      let temp = '';
+      for (let j = 0; j < skill_trees[i].length; j++) {
+        if (skill.includes(skill_trees[i].charAt(j)))
+          temp += skill_trees[i].charAt(j);
+      }
+      if (temp.length != 0) arr.push(temp);
+    }
+
+    console.log(arr);
+
+    for (let i = 0; i < arr.length; i++) {
+      let j
+      for (j = 0; j < arr[i].length; j++) {
+        if (skill.charAt(j) != arr[i].charAt(j)) break;
+      }
+      if (j == arr[i].length) answer++;
+    }
+    console.log(answer);
+
+
+  </script>
+
+</body>
+
+</html>
